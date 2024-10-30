@@ -6,50 +6,50 @@ public class App {
 
         Scanner scanner = new Scanner(System.in);
 
-        double operando1 = 0;   //Primo valore dell'operazione
-        double operando2 = 0;   //Secondo valore dell'operazione
-        String operazione ="";  //Tipo dell'operazione richiesta
-        String errore = "";     //Messaggio di errore       
+        double dnumber1 = 0;   // Input 1st number
+        double dNumber2 = 0;   // Input 2nd number
+        String sOperator ="";  // Input operator type
+        String sErr = "";      // Error message     
 
         try {
 
-            /* Richiesta dei valori in input */
-            System.out.println("Digita il primo numero:");
-            operando1 = scanner.nextDouble();
-            System.out.println("Digita il tipo di operazione (+,-,*,/):");
-            operazione = scanner.next();
-            System.out.println("Digita il secondo numero:");
-            operando2 = scanner.nextDouble();
+            /* Requesting input values */
+            System.out.println("Enter the first number:");
+            dnumber1 = scanner.nextDouble();
+            System.out.println("Enter the type of operation (+,-,*,/):");
+            sOperator = scanner.next();
+            System.out.println("Enter the second number:");
+            dNumber2 = scanner.nextDouble();
             
 
         } catch (InputMismatchException e) { 
 
-            /* Errore in caso di input errato */
-            errore = "Il valore inserito non è valido!";
+            /* Error message when typing wrong value */
+            sErr = "The entered value is invalid!";
 
         } 
 
         
-        if (errore == "") {
+        if (sErr == "") {
 
-            /* Richiamo la classe Calcolatrice inviando i dati ed il tipo di operazione */
-            Calcolatrice calcolatrice = new Calcolatrice(operando1, operando2, operazione);    
+            /* Calling Calculator class by sending data and type of operation */
+            Calculator Calculator = new Calculator(dnumber1, dNumber2, sOperator);    
 
-            if  (calcolatrice.err == "") {
+            if  (Calculator.sErr == "") {
 
-                /* Mando a video il risultato dell'operazione */
-                System.out.println("Il risultato dello'operazione è: " + calcolatrice.risultato);
+                /* Displaying the result */
+                System.out.println("The result of this operation is: " + Calculator.sResult);
 
             } else {
 
-               /* Mando a video il messaggio di errore nel caso immetto un tipo di operazione diverso da +, -, *, / */
-                System.err.println(calcolatrice.err);
+               /* Displaying the error message if an operator type (other than +, -, *, /) has been typed */
+                System.err.println(Calculator.sErr);
             }
             
         } else {
 
-            /* Mando a video il messaggio di errore commesso in fase di input */
-            System.err.println(errore);
+            /* Displaying the error message committed during input */
+            System.err.println(sErr);
 
         }
         
