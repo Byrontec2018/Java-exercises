@@ -26,7 +26,6 @@ public class NumberTriangle {
 
                 //PrintTriangle print = new PrintTriangle();  // 1st method
                 PrintTriangle1 print = new PrintTriangle1();  // 2nd method (more faster than 1st)
-1
                 print.printTriangle(rowsNumber);
 
             } else { 

@@ -1,0 +1,7 @@
+springbeans/pom.xml
+springbeans/src/main/java/byrontec/BeanConfig.java
+springbeans/src/main/java/byrontec/Main.java
+springbeans/src/main/java/byrontec/Student.java
+springbeans/target/classes/byrontec/BeanConfig.class
+springbeans/target/classes/byrontec/Main.class
+springbeans/target/classes/byrontec/Student.class
